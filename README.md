@@ -6,7 +6,7 @@ cifrador: Ciphers a given text with a given key.
 descifrador: Deciphers a given text with a given key.
 
 
------Attacking tools-----
+                                                      -----Attacking tools-----
 
 frecuencias: Returns a list with the letters present in the cipher text and a list with their respective occurrence frecuencies.
 
