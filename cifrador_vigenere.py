@@ -18,7 +18,7 @@ def generador_tabla():
         fila_temporal = []
     return tabla_vigenere
 
-def cifrador(texto_plano):
+def cifrador(texto_plano, clave):
     tabla_vigenere = [] #guarda la tabla vigenere
     cifrado = '' #guarda el texto cifrado
     condicion_clave = 0 #comprueba que la clave sea de cierta longitud
@@ -28,16 +28,8 @@ def cifrador(texto_plano):
     sobrantes = '' #almacena el pedazo de clave que se pondrá al final
     clave_repetida = '' #donde se almacena la clave repetida segun la longitud del texto 
 
-
-    #solicitud de datos
-    #texto_plano = input("Ingrese el mensaje a cifrar")
     texto_plano = texto_plano.lower()
-    while condicion_clave == 0:
-        clave = input("Escriba una clave de 5 o más dígitos: ")
-        if len(clave)>=5:
-            condicion_clave = 1
     clave = clave.upper()
-
 
     #quitando espacios del texto plano
     for i in texto_plano:
@@ -70,12 +62,9 @@ def cifrador(texto_plano):
 
     cifrado = cifrado.upper()
                 
-    #print(texto_plano_limpio)
-    #print(clave_repetida)
-    #print(cifrado)
     return cifrado
 
-def descifrado(texto_cifrado, clave):
+def descifrador(texto_cifrado, clave):
     tabla_vigenere = [] #guarda la tabla vigenere
     condicion_clave = 0 #comprueba que la clave sea de cierta longitud
     repeticion_completa = 0 #el numero de veces que la palabra se replica completa
@@ -84,13 +73,7 @@ def descifrado(texto_cifrado, clave):
     clave_repetida = '' #donde se almacena la clave repetida segun la longitud del texto
     descifrado = '' #guarda el texto descifrado
 
-    #solicitud de datos
-    #texto_cifrado = input("Ingrese el mensaje cifrado: ")
     texto_cifrado = texto_cifrado.lower()
-    #while condicion_clave == 0:
-     #   clave = input("Escriba una clave de 5 o más dígitos: ")
-      #  if len(clave)>=5:
-       #     condicion_clave = 1
     clave = clave.upper()
 
     #repeticion de la clave
@@ -116,7 +99,6 @@ def descifrado(texto_cifrado, clave):
 
         descifrado = descifrado + tabla_vigenere[y][0] #agrega la letra que corresponde a un string que guarda el texto cifrado
 
-    #print(descifrado)
     return descifrado
 
 def frecuencias(texto_cifrado):
@@ -144,8 +126,6 @@ def frecuencias(texto_cifrado):
         frecuencias.append(repeticiones) 
         repeticiones = 0 #poniendolo al final me ahorro una instruccion innecesaria la primera vez, porque ya está inicializado
 
-    #print(letras_cifrado)
-    #print(frecuencias)
     return letras_cifrado, frecuencias
 
 def frecuencias_grupos(texto_cifrado): 
@@ -221,11 +201,4 @@ def frecuencias_grupos(texto_cifrado):
                 inicio_grupo_busqueda = 0 
                 repeticion = -1
         inicio_formacion_grupo = 0
-    #print(grupos)
-    #print(len(grupos))
-    #print(frecuencias)   
-    #print(len(frecuencias))
-    #print(espaciados)   
-    #print(len(espaciados))
-    
     return grupos, frecuencias, espaciados
