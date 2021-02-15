@@ -1,5 +1,5 @@
 # Vigenere-Cipher
-Python module with functions to cipher text using the vigenere-cipher -with the classic vigenere table- method and some functions useful for the attack of this algorithm. 
+Python module with functions to cipher text using the vigenere-cipher -with the classic vigenere table- method and some functions useful for the attack against this algorithm. 
 
 cifrador: Ciphers a given text with a given key.
 
